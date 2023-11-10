@@ -1,0 +1,379 @@
+@font-face {
+    font-family: 'Capriola';
+    src: url(../Fonts/Capriola-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Signika';
+    src: url(../Fonts/Signika-VariableFont_wght.ttf);
+}
+
+/* BASE */
+* {
+    box-sizing: border-box;
+    font-family: 'Capriola', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+header {
+    display: flex;
+    min-height: 26vh;
+    flex-direction: row;
+    gap: 0.4rem; 
+}
+#alt-header {display: none;}
+
+main {
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    min-height: calc(100vh - 26vh);
+    gap: 1rem;
+}
+
+/* .fixed-nav {display: none;} */
+
+#logo-container {
+    flex: 1;
+}
+#logo-container #home-logo-long {
+    display: none;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    flex-direction: column;
+    flex: 6.5;
+    gap: 0.3rem;
+}
+
+#top-nav-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    /* background-color: lightseagreen; */
+    /* flex-wrap: wrap; Search bar width is 100% */
+    gap: 0.3rem;
+}
+
+#categories-container {
+    display: flex;
+    border: 3px solid #505050;
+    border-radius: 10px;
+    transition: all 150ms;
+}
+#categories-container:hover {
+    border-color: black;
+}
+
+#location-container {
+    display: flex;
+    align-items: center;
+    /* background-color: tomato; */
+    font-size: 1.3rem;
+    color: #2a4cd6;
+}
+#location-container #text-holder {
+    color: white;
+    border: 2px solid black;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #2a4cd6;
+    padding: 1rem;
+}
+#location-container #text-holder:hover {
+    background-color: white;
+    color: #2a4cd6;
+}
+#location-container a {
+    color: inherit;
+}
+#location-container a:active{
+    color: red;
+}
+/* NAV */
+
+/************/
+#home-logo {
+    border: 3px solid #505050;
+    border-radius: 12px;
+}
+#home-logo:active {
+    border-color: red;
+}
+
+#top-nav-container > a, #back-to-top {
+    text-decoration: none;
+    white-space: nowrap;
+    color: black;
+    background-color: #feed00;
+    border: 3px solid #505050;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    padding: 1rem;
+    transition: all 200ms;
+}
+#top-nav-container > a {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+#top-nav-container > a:hover, #back-to-top:hover {
+    color: #feed00;
+    border-color: black;
+    background-color: black;
+}
+#top-nav-container > a:active, #back-to-top:active {
+    background-color: red;
+    color: white;
+    transition: none;
+}
+
+#search-bar {
+    border: 3px solid #505050;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    padding: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+/* */
+#categories-container > a {
+    text-decoration: none;
+    background-color: #feed00;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #505050;
+    padding: 0.8rem 1rem;
+    flex: 1;
+    transition: all 150ms;
+}
+#Electronics {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+#Home-Appliances {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+#categories-container > a:hover {
+    color: #feed00;
+    background-color: black;
+}
+#categories-container > a:active {
+    background-color: red;
+    color: white;
+    transition: none;
+}
+
+/* MAIN start */
+/* PRODUCTS START */
+#products {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    max-width: 21vw;
+    flex-direction: column;
+    border: 2px solid gray;
+    border-radius: 12px;
+    transition: all 0.5s;
+}
+
+.card:hover {
+    border-color: white;
+    box-shadow: 0 0 200px 1px lightgray;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.image-container > a {
+    padding: 10px;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+}
+
+.card > a {
+    text-decoration: none;
+    color: black;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 0 10px;
+    flex: 1;
+}
+
+.info-container p {
+    margin: 0;
+    font-family: 'Signika', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.1vw;
+}
+
+.name {
+    height: 2.89vw;
+    /* Required for '-webkit-line-clamp' to work */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* */
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+
+}
+
+.price-category {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem 0 0.8rem 0;
+}
+
+.price-category .price {
+    display: flex;
+    flex-shrink: 0;
+    font-weight: 500;
+    font-size: 2vw;
+    color: dodgerblue;
+}
+
+.price-category .category {
+    display: flex;
+    padding: 1vw;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 0.9vw;
+    box-shadow: 0 0 30px 1px lightgray;
+    border-radius: 1.3vw;
+    border-top-left-radius: 0;
+}
+
+.card-men {
+    box-shadow: 5px 5px #64e0ff;
+}
+
+.men {
+    background-color:#64e0ff;
+}
+
+.card-electronics {
+    box-shadow: 5px 5px #feed00;
+}
+
+.electronics {
+    background-color: #feed00;
+}
+
+.card-women {
+    box-shadow: 5px 5px pink;
+}
+
+.women {
+    background-color: pink;
+}
+
+/**/
+.company-name {
+    display: flex;
+    justify-content: center;
+    font-size: 5vw;
+}
+.company-name:not(.apple) {
+    margin-top: 8rem;
+}
+.products-last {
+    margin-bottom: 5rem;
+}
+.company-name h1 {
+    font-family: 'Signika';
+    color: #2a4cd6;
+    font-style: italic;
+    text-shadow: 5px 5px black;
+    margin: 0;
+    padding: 2rem;
+}
+
+/* PRODUCTS END */
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 10px 0;
+}
+
+#back-to-top {
+    width: 15vw;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 1.3vw;
+}
+/*********/
+
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1050px) {
+    /*** HEADER ***/
+    header {
+        display: none;
+    }
+    
+    #alt-header {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem;
+        background-color: #feed00;
+        border: 1.5px solid #505050;
+        border-radius: 12px;
+    }
+
+    #alt-search-bar {
+        padding: 1rem;
+        width: 100%;
+        outline: none;
+        border: 1.5px solid #505050;
+        border-radius: 12px;
+    }
+
+    #bar-2 {
+        display: flex;
+        overflow: auto;
+    }
+
+    #bar-2 > a {
+        text-decoration: none;
+        white-space: nowrap;
+        text-align: center;
+        color: #505050;
+        padding: 0.5rem 0.8rem;
+        flex: 1;
+    }
+
+    /*** MAIN ***/
+}
