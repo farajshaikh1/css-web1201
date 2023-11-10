@@ -1,0 +1,590 @@
+/* BASE */
+* {
+    box-sizing: border-box;
+    font-family: 'Capriola', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+/* Aside START*/
+#mask-scrolled-content-aside {
+    background-color: white;
+    position: sticky;
+    height: 100%;
+    top: 0.5rem;
+    width: 100vw;
+    /* z-index: 0; */
+}
+aside {
+    display: flex;
+    position: sticky;
+    top: 0.5rem;
+    flex-direction: column;
+    height: 98vh;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: #feed00;
+    border: 3px solid #505050;
+    border-radius: 7px;
+    justify-content: space-between;
+}
+
+aside a:not(#home-logo) {
+    display: block;
+    font-size: 1.2rem;
+    padding: 1.2rem 0;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+#home-logo {
+    border: 3px solid #505050;
+    border-radius: 12px;
+}
+#home-logo:active {
+    border-color: red;
+}
+
+/* Aside END */
+
+main {
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    /* min-height: calc(100vh - 26vh); */
+    gap: 1rem;
+}
+
+#mask-scrolled-content-nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 120px;
+    background-color: white;
+    z-index: 0;
+}
+
+header {
+    display: flex;
+    position: sticky;
+    top: 0.5rem;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+#alt-header {display: none;}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/**/
+.offers {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    max-height: 40vh;
+}
+#offer1 {
+    flex: 1.3;
+    display: flex;
+    background-color: transparent;
+    border: 2px solid gray;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+#offer2 {
+    flex: 1;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+.poster-image {
+    border-radius: 12px;
+}
+
+.poster-image {
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+#offer1:hover, #offer2:hover {
+    /* horizontal vertical -blur- -color- -spread radius- */
+    box-shadow: 5px 5px #feed00;
+}
+
+#offer1:active, #offer2:active {
+    box-shadow: 5px 5px red;
+}
+/**/
+
+/* NAV */
+
+#top-nav-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    /* background-color: lightseagreen; */
+    /* flex-wrap: wrap; Search bar width is 100% */
+    gap: 0.3rem;
+}
+#top-nav-container > a, #back-to-top {
+    text-decoration: none;
+    white-space: nowrap;
+    color: black;
+    background-color: #feed00;
+    border: 3px solid #505050;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    padding: 1rem;
+    transition: all 200ms;
+}
+#top-nav-container > a:hover, #back-to-top:hover {
+    color: #feed00;
+    border-color: black;
+    background-color: black;
+}
+#top-nav-container > a:active, #back-to-top:active {
+    background-color: red;
+    color: white;
+    transition: none;
+}
+
+#search-bar {
+    border: 3px solid #505050;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    padding: 1rem;
+    outline: none;
+    width: 100%;
+}
+/**/
+
+#categories-container {
+    display: flex;
+    border: 3px solid #505050;
+    border-radius: 10px;
+    transition: all 150ms;
+}
+#categories-container:hover {
+    border-color: black;
+}
+#categories-container > a {
+    text-decoration: none;
+    background-color: #feed00;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #505050;
+    padding: 0.8rem 1rem;
+    flex: 1;
+    transition: all 150ms;
+}
+#Electronics {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+#Watches {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+#categories-container > a:hover {
+    color: #feed00;
+    background-color: black;
+}
+#categories-container > a:active {
+    background-color: red;
+    color: white;
+    transition: none;
+}
+/* NAV end*/
+
+/******** CIRCLES ********/
+#circle-section {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1%;
+    /* flex-basis: 84vw; */
+    border-radius: 12px;
+    align-items: flex-start;
+}
+
+.circle-list { /* <ul> */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    gap: 1.5rem;
+}
+
+#shop-electronics-li {
+    display: flex;
+    /* height: auto; */
+    flex: 2;
+    align-items: center;
+    background-color: white;
+}
+
+/* Avoiding SHOP ELECTRONICS icon */
+.circle-list li:not(#shop-electronics-li) {
+    display: flex;
+    /* padding: 0.8rem; */
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    flex: 1;
+    align-items: center;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 50%;
+    box-shadow: 0 0 1px 6px #feed00;
+    transition: 0.3s;
+}
+
+.logo {
+    padding: 1.3rem;
+    object-fit: contain;
+    flex: 1;
+}
+.circle-list li:hover:not(#shop-electronics-li) {
+    border-color: transparent;
+    box-shadow: 0 0 1px 10px #feed00;
+}
+.circle-list li:active:not(#shop-electronics-li) {
+    transition: none;
+    box-shadow: 0 0 1px 10px red;
+}
+/******** CIRCLES end ********/
+
+/* MAIN start */
+/* PRODUCTS START */
+#products {
+    display: flex;
+    flex-flow: row wrap;
+    /* margin-right: 20px; */
+    /* width: 1195px; */
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    width: 18.8vw;
+    flex-direction: column;
+    border: 2px solid gray;
+    border-radius: 12px;
+    transition: all 0.5s;
+}
+
+.card:hover {
+    border-color: white;
+    box-shadow: 0 0 200px 1px lightgray;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.image-container > a {
+    padding: 10px;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+}
+
+.card > a {
+    text-decoration: none;
+    color: black;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 0 10px;
+    flex: 1;
+}
+
+.info-container p {
+    margin: 0;
+    font-family: 'Signika', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.1vw;
+}
+
+.name {
+    height: 2.89vw;
+    /* Required for '-webkit-line-clamp' to work */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* */
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+
+}
+
+.price-category {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0 5px 0;
+}
+
+.price-category .price {
+    display: flex;
+    flex-shrink: 0;
+    font-weight: 500;
+    font-size: 2vw;
+    color: dodgerblue;
+}
+
+.price-category .category {
+    display: flex;
+    padding: 1vw;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 0.9vw;
+    box-shadow: 0 0 30px 1px lightgray;
+    border-radius: 1.3vw;
+    border-top-left-radius: 0;
+}
+
+.card-men {
+    box-shadow: 5px 5px #64e0ff;
+}
+
+.men {
+    background-color:#64e0ff;
+}
+
+.card-electronics {
+    box-shadow: 5px 5px #feed00;
+}
+
+.electronics {
+    background-color: #feed00;
+}
+
+.card-women {
+    box-shadow: 5px 5px pink;
+}
+
+.women {
+    background-color: pink;
+}
+
+/* PRODUCTS END */
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 10px 0;
+}
+
+#back-to-top {
+    width: 15vw;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+/*********/
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+/* @media (max-width: 985px) {
+    .everything {
+        flex-flow: column wrap;
+    }
+
+    #part3 > * {
+        margin-left: 0;
+    }
+    #part3 > #choice1 {
+        margin-top: 0;
+    }
+
+    #vertical-line {
+        display: none;
+    }
+    hr {
+        display: unset;
+        border-style: solid;
+        border-color: gray;
+        border-width: 2.5px;
+        border-radius: 15px;
+        width: 60%;
+    }
+} */
+
+@media (max-width: 1050px) {
+    /*** HEADER ***/
+    header {
+        display: none;
+    }
+    
+    #alt-header {
+        display: flex;
+        flex-direction: column;
+        padding: 0.2rem;
+        background-color: #feed00;
+        border: 1.5px solid #505050;
+        border-radius: 12px;
+    }
+
+    #alt-search-bar {
+        padding: 1rem;
+        width: 100%;
+        outline: none;
+        border: 1.5px solid #505050;
+        border-radius: 12px;
+    }
+
+    #bar-2 {
+        display: flex;
+        overflow: auto;
+    }
+
+    #bar-2 > a {
+        text-decoration: none;
+        white-space: nowrap;
+        text-align: center;
+        color: #505050;
+        padding: 0.5rem 0.8rem;
+        flex: 1;
+    }
+
+    /*** MAIN ***/
+    #vertical-line {
+        display: none;
+    }
+
+    .everything > *, .information > * {
+        width: 40%;
+    }
+    
+    /**/
+    .everything {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #part3 > * {
+        margin-left: unset;
+    }
+    #part3 > #choice1 {
+        margin-top: 1rem;
+    }
+    /**/
+
+    .information {
+        flex-direction: column;
+        align-items: center;
+    }
+    #overview {
+        order: 1;
+    }
+
+
+    #specs {
+        order: 2;
+    }
+    #specs table {
+        width: 100%;
+        text-align: center;
+    }
+
+    #shipping {
+        order: 3;
+    }
+
+}
+
+@media (max-width: 850px) {
+
+    .lines p {
+        font-size: 1rem;
+    }
+    .lines .text-body {
+        font-size: 0.8rem;
+    }
+    .everything > *, .information > * {
+        width: 60%;
+    }
+}
+
+@media (max-width: 650px) {
+    .everything > *, .information > * {
+        width: 9%;
+    }
+
+    #overview h2 {
+        font-size: 1.4rem;
+    }
+    #overview h3 {
+        font-size: 1rem;
+    }
+    #overview li {
+        font-size: 0.8rem;
+    }
+
+    #specs h2 {
+        font-size: 1.4rem;
+    }
+    #specs table {
+        font-size: 0.8rem;
+    }
+
+    #brand-name {
+        font-size: 0.8rem;
+    }
+    #name {
+        font-size: 1.3rem;
+    }
+    #rating {
+        font-size: 0.6rem;
+    }
+    #price {
+        font-size: 2.2rem;
+    }
+    #before-price {
+        font-size: 1.2rem;
+    }
+    
+    #part3 > * > span {
+        font-size: 0.9rem;
+    }
+    #part3 button {
+        font-size: 0.8rem;
+    }
+}
